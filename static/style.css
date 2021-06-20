@@ -1,0 +1,53 @@
+header{
+    margin: 0px;
+    padding: 0px;
+}
+/*justify-content:space-between can work also*/
+.navbar{
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    background-color: #000;
+    border-radius: 5%;
+}
+
+.divlinks ul{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.divlinks li{
+    list-style: none;
+}
+
+.divlinks li a{
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.divlinks li:hover{
+    background-color: #555;
+}
+
+.trow{
+    text-align: left;
+}
+
+.trow td p{
+    padding: 5px;
+}
+.inputadd:hover{
+    color: rgba(30, 255, 0, 0.856);
+
+}
+
+.inputreset:hover{
+    color: rgba(160, 34, 12, 0.747);
+}
+
+.inputdelete:hover{
+    color: rgb(68, 0, 255);
+}

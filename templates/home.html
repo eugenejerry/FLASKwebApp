@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Bookstore</title>
+</head>
+
+<body style="margin: 30px 100px; background-color: rgb(95, 9, 9);">
+    <header> 
+        <div style="text-align: center; font-family: cursive; color: rgb(3, 117, 117); font-size: 2em; margin-bottom: 10px;">Code-Plateau (MAD) 2.0</div>
+        <nav class="navbar">
+            <div style="font-size: 1.2rem; margin-right: 15rem; margin-left: 1.5rem; color: white;">Code-Plateau (MAD)</div>
+            <div class="divlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Store</a></li>
+                    <li><a href="#">Make Order</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header> 
+
+    <div style="border: 2px dotted green; text-align: center; padding: 20px 20px ;">
+        <h1 style="color: rgb(217, 230, 217);">BOOK STORE RECORD-INPUT</h1>
+
+        <form action="/" method="POST">
+            <label for="title" style="color: white;">Book Title</label> <br>
+            <input type="text" name="title" id="title" placeholder="Type your title here" required> <br> <br>
+            
+            <label for="email" style="color: white;">Email Address</label> <br>
+            <input type="email" name="email" id="email" placeholder="Type your email address" required> <br><br>
+            
+            <label for="address" style="color: white;">Contact Address</label> <br>
+            <textarea name="address" placeholder="Type your contact address" style="width: 40%; text-align: center; padding-top: 5px; font-size: 1.5em; border-radius: 15%;">your Address Here</textarea><br><br><br><br>
+
+            <input type="hidden" name="hidden" value="100">
+            <input type="submit" value="+Add Record" class="inputadd" style="width: 24%; height: 42px; border-radius: 10px; background-color: rgb(206, 228, 206);"> <br><br>
+            <input type="reset" name="reset" id="reset" value="Reset" class="inputreset" style="width: 12%; height: 40px; background-color: khaki;">
+            <input type="submit" value="Delete" class="inputdelete" style="width: 12%; height: 40px; background-color: rgb(160, 62, 62); color: black;">
+        </form>
+    </div>
+
+<!--this loops through Books and prints out book.title-->
+    <div style="text-align: center; border: 2px solid darkgreen; margin-top: 20px">
+        <h1 style="color: azure;">STORE-OUTPUT</h1>
+        <h1 style="color: azure;">Books Info below:</h1>
+        <table border="1px" align="center" >
+            <thead>
+                <tr>
+                    <th style="color: rgb(126, 126, 199);">Title of Book</th>
+                    <th style="color: rgb(126, 126, 199)">Email Address</th>
+                    <th style="color: rgb(126, 126, 199)">Contact Address</th>
+                </tr>
+            </thead>
+            {% for book in books %}
+            <tbody> 
+                <tr class="trow">
+                    <td> <p style="color: bisque;">{{ book.title }}</p> </td>
+                    <td> <p style="color: aquamarine;">{{ book.email }}</p> </td>
+                    <td> <p style="color: aquamarine;">{{ book.address }}</p> </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        <br>
+
+    </div>
+</body>
+</html>
